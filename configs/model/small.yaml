@@ -1,0 +1,11 @@
+name: small
+type: ddit
+hidden_size: 256
+cond_dim: 256
+length: 10
+n_blocks: 1
+n_heads: 2
+scale_by_sigma: False
+dropout: 0.1
+score_flag: False
+score_method: diffcos

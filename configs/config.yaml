@@ -1,0 +1,96 @@
+defaults:
+  - _self_
+  - model: small
+  - override hydra/launcher: submitit_slurm
+
+ngpus: 0
+cuda: 0
+random_seed: 100
+work_dir: ./
+loss_type: score_entropy
+
+training:
+  data: ML1M
+  batch_size: 256
+  accum: 1
+  n_iters: 2000000
+  snapshot_freq: 50000
+  log_freq: 2000
+  eval_freq: 10000
+  snapshot_freq_for_preemption: 10000
+  weight: standard
+  snapshot_sampling: True
+  ema: 0.9999
+  nonpreference_user_ratio: 0.1
+
+data:
+  Steam:
+    path: ../../ours_DiT/data/steam
+    seq_len: 10
+    item_num: 9265
+  Beauty:
+    path: ../../ours_DiT/data/Beauty
+    seq_len: 10
+    item_num: 12101
+  ASO:
+    path: ../../ours_DiT/data/ASO
+    seq_len: 10
+    item_num: 18357
+  ATG: 
+    path: ../../ours_DiT/data/ATG
+    seq_len: 10
+    item_num: 11924
+  ATV: 
+    path: ../../ours_DiT/data/ATV
+    seq_len: 10
+    item_num: 44014
+  ML1M:
+    path: ../../ours_DiT/data/ML1M
+    seq_len: 10
+    item_num: 3883
+
+graph:
+# point | pair | hybrid | adaptive
+  type: point
+  is_disliked_item: True
+  gamma: 0.5
+  file: data
+  report_all: False
+
+noise:
+  # geometric | loglinear
+  type: geometric
+  sigma_min: 1e-3
+  sigma_max: 10
+
+sampling:
+  predictor: analytic
+  steps: 20
+  noise_removal: True
+  personalization_strength: 2
+
+eval:
+  batch_size: 256
+  perplexity: True
+  perplexity_batch_size: 32
+
+optim:
+  weight_decay: 0
+  optimizer: AdamW
+  lr: 1e-3
+  beta1: 0.9
+  beta2: 0.999
+  eps: 1e-8
+  warmup: 2500
+  grad_clip: 1.
+
+hydra:
+  launcher:
+    max_num_timeout: 100000
+    # timeout_min: 10079
+    partition: g40x
+    account: stanford
+    mem_gb: 96
+    cpus_per_task: 40
+    gpus_per_node: ${ngpus}
+    constraint: null
