@@ -1,8 +1,103 @@
 🐡: Welcome to PreferGrow, this is a implementation of ***Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation***
 
+<div align=center>
+
+<h1>Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation</h1>
+
+<img src="https://img.shields.io/badge/License-MIT-blue" alt="license">
+
+<div>
+      <a href="https://Hugo-Chinn.github.io//" target="_blank">Guoqing Hu</a><sup>1</sup>,
+      <a href="https://anzhang314.github.io/" target="_blank">An Zhang</a><sup>2&#8224</sup>,
+      <a href="https://github.com/zjwu0522" target="_blank">Zijian Wu</a><sup>1</sup>,
+      <a href="https://circle-hit.github.io/" target="_blank">Weixiang Zhao</a><sup>3</sup>,
+      <a href="https://changshuoshen.github.io/" target="_blank">Changshuo Shen</a><sup>2</sup>,
+      <a href="https://github.com/zy20031230/" target="_blank">Yi Zhang</a><sup>2</sup>,
+      <a href="https://xiangwang1223.github.io./" target="_blank">Xiang Wang</a><sup>2</sup>,
+<div>
+  <sup>1</sup>National University of Singapore, <sup>2</sup>University of Science and Technology of China
+       </div>   
+<div>
+<sup>+</sup> Corresponding author. 
+   </div>
+
+</div>
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+
+</div>
+
+## LRMs plan reasoning strengths with pre-allocated direction vectors
+
+![illustration](assets/illustration.png)
+
+In our paper, we reveal that:
+
+- LRMs plan reasoning strengths in advance, even before the generation of the first reasoning token.
+- As the difficulty of questions increases, the reasoning strength of LRMs also increases. Meanwhile, the activations of different difficulty levels shift towards the same direction, with the magnitude of this direction controlling the reasoning strength.
+- Steering with the pre-allocated direction vectors can change the reasoning strength of LRMs, which further impacts the final performance.
+
+## Usage
+
+Generate the main results (i.e., linear regression, direction vector extraction and analysis) in this paper:
+
+```bash
+bash scripts/analyze.sh
+```
+
+Evaluate the effect of steering:
+
+```bash
+python AnalyzeSteerFull.py
+```
+
+Replicate the results of the overthink detection before generation:
+
+```bash
+python eval_overthink.py
+```
+
+Replicate the results of the efficient inference:
+
+```bash
+python efficient_reasoning.py
+```
+
+## Activation Steering with vLLM
+
+We implement the activation steering with vLLM, which can be found in `steer_qwen2_vllm.py` file.
+To enable the usage of vLLM, you need to set the environment variable `steering_vector_path` to the path of the steering vector.
+
+```bash
+export steering_vector_path=/path/to/steering_vector.npy
+```
+
+
+## ☎️ Contact
+
+Please contact the first author for any questions.
+
+- Leheng Sheng, leheng.sheng@u.nus.edu
+
+## 🌟 Citation
+
+If you find our work useful, please kindly consider citing our work as follows:
+
+```bibtex
+@article{sheng2025reasoning,
+  title={On Reasoning Strength Planning in Large Reasoning Models},
+  author={Sheng, Leheng and Zhang, An and Wu, Zijian and Zhao, Weixiang and Shen, Changshuo and Zhang, Yi and Wang, Xiang and Chua, Tat-Seng},
+  journal={arXiv preprint arXiv:2506.08390},
+  year={2025}
+}
+```
+
 ## :zero:  ​ Datasets
 
-https://drive.google.com/file/d/1ri0MRUScdA0AxZiAxj8N21QOE1rc0Nh8/view?usp=sharing
+[https://drive.google.com/file/d/1ri0MRUScdA0AxZiAxj8N21QOE1rc0Nh8/view?usp=sharing](https://drive.google.com/file/d/1flFK3TPTiLm6e7WzijVu9gwSi6pD526g/view?usp=drive_link)
+
+https://drive.google.com/file/d/1fsQUa92UV9_MqcGKqDhK9Sh4JrlbblLZ/view?usp=drive_link
 
 ## :one:  ​ Guide for Running PreferGrow
 
