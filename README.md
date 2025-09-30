@@ -1,6 +1,6 @@
 <div align=center>
 
-<h1> Welcome 🐇 "Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation"</h1>
+<h1> Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation</h1>
 
 <img src="https://img.shields.io/badge/License-MIT-blue" alt="license">
 
@@ -51,71 +51,28 @@ PreferGrow reconstructs user preferences by iteratively growing the preference s
 
 PreferGrow offers a well-defined matrix-based formulation with theoretical guarantees on Markovianity and reversibility, and it demonstrates consistent performance gains over state-of-the-art diffusion-based recommenders across five benchmark datasets, highlighting both its theoretical soundness and empirical effectiveness.
 
-## Usage
+## 🐇 Getting Start
 
-🐡: Welcome to PreferGrow, this is a implementation of ***Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation***
+### :zero: Environment
 
+We provide a packaged **Conda** environment for *diff4rec*.  
+- **Download (conda-pack archive):** [Google Drive link](https://drive.google.com/file/d/1flFK3TPTiLm6e7WzijVu9gwSi6pD526g/view?usp=drive_link)  
+- **Recreate from spec:** see `assets/environment.yml`
 
-Generate the main results (i.e., linear regression, direction vector extraction and analysis) in this paper:
+> Quick start (either option):
+>
+> - **From archive:** unpack to your target path and run `conda-unpack`, then `conda activate /path/to/diff4rec`.
+> - **From YAML:** `conda env create -n diff4rec -f assets/environment.yml` → `conda activate diff4rec`.
 
-```bash
-bash scripts/analyze.sh
-```
+---
 
-Evaluate the effect of steering:
+### :one: Datasets
 
-```bash
-python AnalyzeSteerFull.py
-```
-
-Replicate the results of the overthink detection before generation:
-
-```bash
-python eval_overthink.py
-```
-
-Replicate the results of the efficient inference:
-
-```bash
-python efficient_reasoning.py
-```
-
-## Activation Steering with vLLM
-
-We implement the activation steering with vLLM, which can be found in `steer_qwen2_vllm.py` file.
-To enable the usage of vLLM, you need to set the environment variable `steering_vector_path` to the path of the steering vector.
-
-```bash
-export steering_vector_path=/path/to/steering_vector.npy
-```
+Our datasets are available here:  
+- **Download:** [Google Drive link](https://drive.google.com/file/d/1fsQUa92UV9_MqcGKqDhK9Sh4JrlbblLZ/view?usp=drive_link)
 
 
-## ☎️ Contact
-
-Please contact the first author for any questions.
-
-- Leheng Sheng, leheng.sheng@u.nus.edu
-
-## 🌟 Citation
-
-If you find our work useful, please kindly consider citing our work as follows:
-
-```bibtex
-@article{sheng2025reasoning,
-  title={On Reasoning Strength Planning in Large Reasoning Models},
-  author={Sheng, Leheng and Zhang, An and Wu, Zijian and Zhao, Weixiang and Shen, Changshuo and Zhang, Yi and Wang, Xiang and Chua, Tat-Seng},
-  journal={arXiv preprint arXiv:2506.08390},
-  year={2025}
-}
-```
-
-## :zero:  ​ Datasets
-
-[https://drive.google.com/file/d/1ri0MRUScdA0AxZiAxj8N21QOE1rc0Nh8/view?usp=sharing](https://drive.google.com/file/d/1flFK3TPTiLm6e7WzijVu9gwSi6pD526g/view?usp=drive_link)
-
-https://drive.google.com/file/d/1fsQUa92UV9_MqcGKqDhK9Sh4JrlbblLZ/view?usp=drive_link
-
-## :one:  ​ Guide for Running PreferGrow
+## :two:  ​ Guide for Running PreferGrow
 
 ### :walking_man: Hybrid Settings
 
@@ -133,4 +90,23 @@ nohup python -u single_train.py cuda=6 random_seed=100 training.data="Steam" gra
 nohup python -u single_train.py cuda=3 random_seed=100 training.data="Beauty" graph.type="adaptive" graph.is_disliked_item=True model.hidden_size=256 model.cond_dim=256 training.nonpreference_user_ratio=0.1 optim.lr=0.0001 model.score_flag=False loss_type="score_entropy" model.score_flag=False model.score_method="oricos" > ./log/Beauty/UserProbs_PreferGrow_Adaptive+1_dim256_lr1e-4_p0.1_SE_oricos 2>&1 &
 nohup python -u single_train.py cuda=4 random_seed=100 training.data="ATG" graph.type="adaptive" graph.is_disliked_item=True model.hidden_size=256 model.cond_dim=256 training.nonpreference_user_ratio=0.2 optim.lr=0.0001 model.score_flag=False loss_type="score_entropy" model.score_flag=False model.score_method="oricos" > ./log/ATG/UserProbs_PreferGrow_Adaptive+1_dim256_lr1e-4_p0.2_SE_oricos 2>&1 &
 nohup python -u single_train.py cuda=5 random_seed=100 training.data="ASO" graph.type="adaptive" graph.is_disliked_item=True model.hidden_size=256 model.cond_dim=256 training.nonpreference_user_ratio=0.2 optim.lr=0.0001 model.score_flag=False loss_type="score_entropy" model.score_flag=False model.score_method="oricos" > ./log/ASO/UserProbs_PreferGrow_Adaptive+1_dim256_lr1e-4_p0.2_SE_oricos 2>&1 &
+```
+
+## ☎️ Contact
+
+Please contact the first author for any questions.
+
+- Guoqing Hu, HugoChinn@mail.ustc.edu.cn
+
+## 🌟 Citation
+
+If you find our work useful, please kindly consider citing our work as follows:
+
+```bibtex
+@article{sheng2025reasoning,
+  title={On Reasoning Strength Planning in Large Reasoning Models},
+  author={Sheng, Leheng and Zhang, An and Wu, Zijian and Zhao, Weixiang and Shen, Changshuo and Zhang, Yi and Wang, Xiang and Chua, Tat-Seng},
+  journal={arXiv preprint arXiv:2506.08390},
+  year={2025}
+}
 ```
