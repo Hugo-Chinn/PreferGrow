@@ -1,5 +1,3 @@
-🐡: Welcome to PreferGrow, this is a implementation of ***Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation***
-
 <div align=center>
 
 <h1>Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation</h1>
@@ -48,6 +46,9 @@ In our paper, we reveal that:
 - Steering with the pre-allocated direction vectors can change the reasoning strength of LRMs, which further impacts the final performance.
 
 ## Usage
+
+🐡: Welcome to PreferGrow, this is a implementation of ***Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation***
+
 
 Generate the main results (i.e., linear regression, direction vector extraction and analysis) in this paper:
 
