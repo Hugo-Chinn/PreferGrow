@@ -37,7 +37,7 @@
 
 ## LRMs plan reasoning strengths with pre-allocated direction vectors
 
-![illustration](assets/illustration.png)
+![illustration](teaser_github.png)
 
 In our paper, we reveal that:
 
