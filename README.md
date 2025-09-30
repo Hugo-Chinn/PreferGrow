@@ -1,6 +1,6 @@
 <div align=center>
 
-<h1>Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation</h1>
+<h1>🐡: Welcome to ***Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation***</h1>
 
 <img src="https://img.shields.io/badge/License-MIT-blue" alt="license">
 
