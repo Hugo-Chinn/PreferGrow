@@ -9,11 +9,18 @@
 <div>
       <a href="https://Hugo-Chinn.github.io//" target="_blank">Guoqing Hu</a><sup>1</sup>,
       <a href="https://anzhang314.github.io/" target="_blank">An Zhang</a><sup>2&#8224</sup>,
-      <a href="https://github.com/zjwu0522" target="_blank">Zijian Wu</a><sup>1</sup>,
-      <a href="https://circle-hit.github.io/" target="_blank">Weixiang Zhao</a><sup>3</sup>,
-      <a href="https://changshuoshen.github.io/" target="_blank">Changshuo Shen</a><sup>2</sup>,
-      <a href="https://github.com/zy20031230/" target="_blank">Yi Zhang</a><sup>2</sup>,
+      
+      Shuchang Liu<sup>1</sup>,
+      <a href="https://github.com/maowenyu-11" target="_blank">Wenyu Mao</a><sup>3</sup>,
+      <a href="https://wujcan.github.io/" target="_blank">Jiancan Wu<sup>2</sup>,
+      <a href="https://ftttank.github.io/author/xun-yang/" target="_blank">Xun Yang</a><sup>2</sup>,
+      
+      Xiang Li<sup>2</sup>,
+      Lantao Hu<sup>2</sup>,
+      Kun Gai<sup>2</sup>,
+      
       <a href="https://xiangwang1223.github.io./" target="_blank">Xiang Wang</a><sup>2</sup>,
+
 <div>
   <sup>1</sup>National University of Singapore, <sup>2</sup>University of Science and Technology of China
        </div>   
