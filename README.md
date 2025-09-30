@@ -28,7 +28,12 @@
 </div>
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/release/python-3110/)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/release/python-380/)
+[![PyTorch 1.13](https://img.shields.io/badge/PyTorch-1.13-EE4C2C.svg)](https://pytorch.org/get-started/previous-versions/)
+[![CUDA 11.7](https://img.shields.io/badge/CUDA-11.7-76B900.svg)](https://developer.nvidia.com/cuda-11-7-0-download-archive)
+[![cuDNN 8.5](https://img.shields.io/badge/cuDNN-8.5-76B900.svg)](https://developer.nvidia.com/rdp/cudnn-archive)
+[![OS Linux](https://img.shields.io/badge/OS-Linux-informational.svg)](https://www.kernel.org/)
+
 
 </div>
 
