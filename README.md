@@ -72,7 +72,19 @@ Our datasets are available here:
 - **Download:** [Google Drive link](https://drive.google.com/file/d/1fsQUa92UV9_MqcGKqDhK9Sh4JrlbblLZ/view?usp=drive_link)
 
 
-## :two:  ​ Guide for Running PreferGrow
+## :two: Guide for Running PreferGrow
+
+Create checkpoint directories (for both training artifacts and metadata):
+
+```sh
+# Create root folders
+mkdir -p checkpoints checkpoints-meta
+
+# Create per-dataset subfolders
+for d in Steam Beauty ASO ATG ATV ML1M; do
+  mkdir -p "checkpoints/$d" "checkpoints-meta/$d"
+done
+
 
 ### :walking_man: Hybrid Settings
 
