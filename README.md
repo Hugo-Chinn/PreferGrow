@@ -35,15 +35,21 @@
 
 </div>
 
-## LRMs plan reasoning strengths with pre-allocated direction vectors
+## discrete diffusion-based recommender system
 
-![illustration](./assets/framework.png)
+![overall_framework](./assets/framework.png)
 
-In our paper, we reveal that:
+In this paper, building upon recent advances in discrete diffusion, we propose \textbf{PreferGrow}, a discrete diffusion-based recommender system that models preference ratios by fading and growing user preferences over the discrete item corpus.
+PreferGrow differs from existing diffusion-based recommenders in three core aspects:
+- (1) Discrete modeling of preference ratios:
+PreferGrow models relative preference ratios between item pairs, rather than operating in the item representation or raw score simplex.
+This formulation aligns naturally with the discrete and ranking-oriented nature of recommendation tasks.
+- (2) Perturbing via preference fading:
+Instead of injecting continuous noise, PreferGrow fades user preferences by replacing the preferred item with alternatives---physically akin to negative sampling---thereby eliminating the need for any prior noise assumption.
+- (3) Preference reconstruction via growing:
+PreferGrow reconstructs user preferences by iteratively growing the preference signals from the estimated ratios.
 
-- LRMs plan reasoning strengths in advance, even before the generation of the first reasoning token.
-- As the difficulty of questions increases, the reasoning strength of LRMs also increases. Meanwhile, the activations of different difficulty levels shift towards the same direction, with the magnitude of this direction controlling the reasoning strength.
-- Steering with the pre-allocated direction vectors can change the reasoning strength of LRMs, which further impacts the final performance.
+PreferGrow offers a well-defined matrix-based formulation with theoretical guarantees on Markovianity and reversibility, and it demonstrates consistent performance gains over state-of-the-art diffusion-based recommenders across five benchmark datasets, highlighting both its theoretical soundness and empirical effectiveness.
 
 ## Usage
 
