@@ -41,12 +41,12 @@
 
 In this paper, building upon recent advances in discrete diffusion, we propose \textbf{PreferGrow}, a discrete diffusion-based recommender system that models preference ratios by fading and growing user preferences over the discrete item corpus.
 PreferGrow differs from existing diffusion-based recommenders in three core aspects:
-- (1) Discrete modeling of preference ratios:
+- **Discrete modeling of preference ratios:**
 PreferGrow models relative preference ratios between item pairs, rather than operating in the item representation or raw score simplex.
 This formulation aligns naturally with the discrete and ranking-oriented nature of recommendation tasks.
-- (2) Perturbing via preference fading:
+- **Perturbing via preference fading:**
 Instead of injecting continuous noise, PreferGrow fades user preferences by replacing the preferred item with alternatives---physically akin to negative sampling---thereby eliminating the need for any prior noise assumption.
-- (3) Preference reconstruction via growing:
+- **Preference reconstruction via growing:**
 PreferGrow reconstructs user preferences by iteratively growing the preference signals from the estimated ratios.
 
 PreferGrow offers a well-defined matrix-based formulation with theoretical guarantees on Markovianity and reversibility, and it demonstrates consistent performance gains over state-of-the-art diffusion-based recommenders across five benchmark datasets, highlighting both its theoretical soundness and empirical effectiveness.
