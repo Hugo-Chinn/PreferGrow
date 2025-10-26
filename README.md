@@ -115,10 +115,10 @@ Please contact the first author for any questions.
 If you find our work useful, please kindly consider citing our work as follows:
 
 ```bibtex
-@article{sheng2025reasoning,
-  title={On Reasoning Strength Planning in Large Reasoning Models},
-  author={Sheng, Leheng and Zhang, An and Wu, Zijian and Zhao, Weixiang and Shen, Changshuo and Zhang, Yi and Wang, Xiang and Chua, Tat-Seng},
-  journal={arXiv preprint arXiv:2506.08390},
+@article{preferGrow,
+  title={Fading to Grow: Growing Preference Ratios via Preference Fading Discrete Diffusion for Recommendation},
+  author={Guoqing Hu, An Zhang Liu, Wenyu Mao, Jiancan Wu, Xun Yang, Xiang Li, Lantao Hu, Han Li, Kun Gai, Xiang Wang},
+  journal={NeurIPS},
   year={2025}
 }
 ```
